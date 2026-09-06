@@ -1,0 +1,977 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Truyện tranh - Blue Moon Shop</title>
+
+    <!-- KẾT NỐI CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        📚 <span>BLUE MOON</span>
+        <small>Milk Tea • Snack • Manga</small>
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Trang chủ
+        </a>
+
+        <a href="menu.html">
+            Menu
+        </a>
+
+        <a href="truyen.html" class="active">
+            Truyện tranh
+        </a>
+
+        <a href="trasua.html">
+            Trà sữa
+        </a>
+
+        <a href="anvat.html">
+            Đồ ăn vặt
+        </a>
+
+        <a href="gopy.html">
+            Góp ý
+        </a>
+
+    </nav>
+
+
+    <div class="header-right">
+
+        <button onclick="openCart()">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+<!-- BLUE MOON SEARCH -->
+<div class="page-search-box">
+  <input id="pageSearch" type="search" placeholder="🔎 Tìm kiếm..." autocomplete="off">
+  <button id="clearPageSearch" type="button">✕</button>
+</div>
+<style>
+.page-search-box{width:min(900px,90%);margin:24px auto;padding:12px;display:flex;gap:10px;box-sizing:border-box;background:#fff;border-radius:16px;box-shadow:0 5px 20px rgba(0,80,170,.08)}
+.page-search-box input{flex:1;min-width:0;padding:13px 16px;border:1px solid #d9e8f8;border-radius:12px;outline:0;font-size:16px}
+.page-search-box input:focus{border-color:#1677ff}
+.page-search-box button{width:44px;height:44px;border:0;border-radius:12px;background:#e8f3ff;color:#1677ff;cursor:pointer}
+.page-search-box button:hover{background:#1677ff;color:#fff}
+</style>
+
+
+
+<!-- ================= NỘI DUNG ================= -->
+
+<section class="section">
+
+
+    <div class="section-title">
+
+        <span>📚</span>
+
+        <div>
+
+            <h2>
+                Thế giới truyện tranh
+            </h2>
+
+            <p>
+                Khám phá những bộ manga
+                nổi tiếng và được yêu thích
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= BỘ LỌC ================= -->
+
+    <div style="
+        background:white;
+        padding:25px;
+        border-radius:20px;
+        margin-bottom:30px;
+        box-shadow:0 5px 20px rgba(0,80,170,.07);
+    ">
+
+        <h3 style="margin-bottom:15px;">
+            🔎 Lọc truyện theo thể loại
+        </h3>
+
+
+        <select
+            id="mangaFilter"
+            onchange="filterManga()"
+            style="
+                padding:12px;
+                border:1px solid #d9e8f8;
+                border-radius:10px;
+                width:280px;
+                max-width:100%;
+            ">
+
+
+            <option value="all">
+                Tất cả thể loại
+            </option>
+
+
+            <option value="action">
+                ⚔️ Hành động
+            </option>
+
+
+            <option value="comedy">
+                😂 Hài hước
+            </option>
+
+
+            <option value="horror">
+                👻 Kinh dị
+            </option>
+
+
+            <option value="romance">
+                ❤️ Tình cảm
+            </option>
+
+
+            <option value="adventure">
+                🌎 Phiêu lưu
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- ================= DANH SÁCH TRUYỆN ================= -->
+
+    <div class="product-grid">
+
+
+        <!-- ONE PIECE -->
+
+        <div class="product-card manga-product"
+            data-type="adventure"
+            data-name="One Piece">
+
+            <div class="product-image blue">
+
+                <img
+                    src="https://covers.openlibrary.org/b/isbn/9781974741298-L.jpg"
+                    alt="One Piece"
+                    style="
+                        width:110px;
+                        height:150px;
+                        object-fit:cover;
+                        border-radius:12px;
+                        display:block;
+                        margin:auto;
+                    ">
+
+            </div>
+
+
+            <span class="tag hot">
+                NỔI TIẾNG
+            </span>
+
+
+            <h3>
+                One Piece
+            </h3>
+
+
+            <p>
+                Tác giả: Eiichiro Oda
+            </p>
+
+
+            <p>
+                Ra mắt: 1997
+            </p>
+
+
+            <p class="price">
+                25.000đ
+            </p>
+
+
+            <button onclick="
+                showManga(
+                    'One Piece',
+                    '📚',
+                    'Eiichiro Oda',
+                    '1997',
+                    'Phiêu lưu',
+                    '25.000đ',
+                    25000
+                )
+            ">
+
+                👀 Xem thông tin
+
+            </button>
+
+        </div>
+
+
+        <!-- DORAEMON -->
+
+        <div class="product-card manga-product"
+            data-type="comedy"
+            data-name="Doraemon">
+
+            <div class="product-image yellow">
+
+                <img
+                    src="https://covers.openlibrary.org/b/isbn/9789810903107-L.jpg"
+                    alt="Doraemon"
+                    style="
+                        width:110px;
+                        height:150px;
+                        object-fit:cover;
+                        border-radius:12px;
+                        display:block;
+                        margin:auto;
+                    ">
+
+            </div>
+
+
+            <span class="tag">
+                KINH ĐIỂN
+            </span>
+
+
+            <h3>
+                Doraemon
+            </h3>
+
+
+            <p>
+                Tác giả: Fujiko F. Fujio
+            </p>
+
+
+            <p>
+                Ra mắt: 1969
+            </p>
+
+
+            <p class="price">
+                22.000đ
+            </p>
+
+
+            <button onclick="
+                showManga(
+                    'Doraemon',
+                    '🤖',
+                    'Fujiko F. Fujio',
+                    '1969',
+                    'Hài hước',
+                    '22.000đ',
+                    22000
+                )
+            ">
+
+                👀 Xem thông tin
+
+            </button>
+
+        </div>
+
+
+        <!-- DETECTIVE CONAN -->
+
+        <div class="product-card manga-product"
+            data-type="action"
+            data-name="Detective Conan">
+
+            <div class="product-image pink">
+
+               <img
+    src="https://mixmangastore.com/cdn/shop/products/81Z_VyLZYlL_1200x.jpg?v=1622404217"
+    alt="Detective Conan"
+    style="
+        width:110px;
+        height:150px;
+        object-fit:cover;
+        border-radius:12px;
+        display:block;
+        margin:auto;
+    ">
+
+            </div>
+
+
+            <span class="tag">
+                TRINH THÁM
+            </span>
+
+
+            <h3>
+                Detective Conan
+            </h3>
+
+
+            <p>
+                Tác giả: Gosho Aoyama
+            </p>
+
+
+            <p>
+                Ra mắt: 1994
+            </p>
+
+
+            <p class="price">
+                24.000đ
+            </p>
+
+
+            <button onclick="
+                showManga(
+                    'Detective Conan',
+                    '🔎',
+                    'Gosho Aoyama',
+                    '1994',
+                    'Hành động',
+                    '24.000đ',
+                    24000
+                )
+            ">
+
+                👀 Xem thông tin
+
+            </button>
+
+        </div>
+
+
+        <!-- JUJUTSU KAISEN -->
+
+        <div class="product-card manga-product"
+            data-type="action"
+            data-name="Jujutsu Kaisen">
+
+            <div class="product-image purple">
+
+                <img
+                    src="https://covers.openlibrary.org/b/isbn/9781974710027-L.jpg"
+                    alt="Jujutsu Kaisen"
+                    style="
+                        width:110px;
+                        height:150px;
+                        object-fit:cover;
+                        border-radius:12px;
+                        display:block;
+                        margin:auto;
+                    ">
+
+            </div>
+
+
+            <span class="tag hot">
+                HOT
+            </span>
+
+
+            <h3>
+                Jujutsu Kaisen
+            </h3>
+
+
+            <p>
+                Tác giả: Gege Akutami
+            </p>
+
+
+            <p>
+                Ra mắt: 2018
+            </p>
+
+
+            <p class="price">
+                30.000đ
+            </p>
+
+
+            <button onclick="
+                showManga(
+                    'Jujutsu Kaisen',
+                    '👹',
+                    'Gege Akutami',
+                    '2018',
+                    'Hành động',
+                    '30.000đ',
+                    30000
+                )
+            ">
+
+                👀 Xem thông tin
+
+            </button>
+
+        </div>
+
+
+        <!-- FRUITS BASKET -->
+
+        <div class="product-card manga-product"
+            data-type="romance"
+            data-name="Fruits Basket">
+
+            <div class="product-image pink">
+
+                <img
+                    src="https://covers.openlibrary.org/b/isbn/9780316360166-L.jpg"
+                    alt="Fruits Basket"
+                    style="
+                        width:110px;
+                        height:150px;
+                        object-fit:cover;
+                        border-radius:12px;
+                        display:block;
+                        margin:auto;
+                    ">
+
+            </div>
+
+
+            <span class="tag">
+                TÌNH CẢM
+            </span>
+
+
+            <h3>
+                Fruits Basket
+            </h3>
+
+
+            <p>
+                Tác giả: Natsuki Takaya
+            </p>
+
+
+            <p>
+                Ra mắt: 1998
+            </p>
+
+
+            <p class="price">
+                28.000đ
+            </p>
+
+
+            <button onclick="
+                showManga(
+                    'Fruits Basket',
+                    '💕',
+                    'Natsuki Takaya',
+                    '1998',
+                    'Tình cảm',
+                    '28.000đ',
+                    28000
+                )
+            ">
+
+                👀 Xem thông tin
+
+            </button>
+
+        </div>
+
+
+        <!-- TRUYỆN KINH DỊ -->
+
+        <div class="product-card manga-product"
+            data-type="horror"
+            data-name="The Drifting Classroom">
+
+            <div class="product-image purple">
+
+                <img
+                    src="https://covers.openlibrary.org/b/isbn/9781974709373-L.jpg"
+                    alt="The Drifting Classroom"
+                    style="
+                        width:110px;
+                        height:150px;
+                        object-fit:cover;
+                        border-radius:12px;
+                        display:block;
+                        margin:auto;
+                    ">
+
+            </div>
+
+
+            <span class="tag">
+                KINH DỊ
+            </span>
+
+
+            <h3>
+                The Drifting Classroom
+            </h3>
+
+
+            <p>
+                Tác giả: Kazuo Umezu
+            </p>
+
+
+            <p>
+                Ra mắt: 1972
+            </p>
+
+
+            <p class="price">
+                32.000đ
+            </p>
+
+
+            <button onclick="
+                showManga(
+                    'The Drifting Classroom',
+                    '👻',
+                    'Kazuo Umezu',
+                    '1972',
+                    'Kinh dị',
+                    '32.000đ',
+                    32000
+                )
+            ">
+
+                👀 Xem thông tin
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+
+        <h2>
+            📚 BLUE MOON SHOP
+        </h2>
+
+        <p>
+            Trà sữa • Đồ ăn vặt • Truyện tranh
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Liên hệ
+        </h3>
+
+
+        <p>
+            📞 000000000
+        </p>
+
+
+        <p>
+            🕐 Hoạt động 24/7
+        </p>
+
+
+        <p>
+            📍 Giao hàng tại Thành phố Hồ Chí Minh
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= MODAL CHI TIẾT TRUYỆN ================= -->
+
+<div id="mangaModal" class="modal">
+
+    <div class="modal-content">
+
+
+        <span
+            class="close"
+            onclick="closeManga()">
+
+            ×
+
+        </span>
+
+
+        <div
+            id="mangaIcon"
+            class="modal-icon">
+
+            📚
+
+        </div>
+
+
+        <h2 id="mangaName">
+            One Piece
+        </h2>
+
+
+        <div style="
+            text-align:left;
+            margin:20px 0;
+            line-height:2;
+        ">
+
+            <p>
+                ✍️ <strong>Tác giả:</strong>
+                <span id="mangaAuthor"></span>
+            </p>
+
+
+            <p>
+                📅 <strong>Năm ra đời:</strong>
+                <span id="mangaYear"></span>
+            </p>
+
+
+            <p>
+                🏷️ <strong>Thể loại:</strong>
+                <span id="mangaGenre"></span>
+            </p>
+
+
+            <p>
+                ⭐ <strong>Độ nổi tiếng:</strong>
+                ⭐⭐⭐⭐⭐
+            </p>
+
+
+            <p>
+                💰 <strong>Giá:</strong>
+                <span
+                    id="mangaPrice"
+                    class="price">
+                </span>
+            </p>
+
+        </div>
+
+
+        <!-- SỐ LƯỢNG -->
+
+        <label>
+
+            <strong>
+                Số lượng:
+            </strong>
+
+        </label>
+
+
+        <input
+            id="mangaQuantity"
+            type="number"
+            value="1"
+            min="1"
+            max="20"
+            style="
+                width:100%;
+                padding:12px;
+                margin:10px 0 20px;
+                border:1px solid #ddd;
+                border-radius:10px;
+            ">
+
+
+        <button
+            onclick="addMangaToCart()">
+
+            🛒 Thêm vào giỏ hàng
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= GIỎ HÀNG ================= -->
+
+<div id="cartModal" class="modal">
+
+    <div class="modal-content cart-content">
+
+        <span
+            class="close"
+            onclick="closeCart()">
+
+            ×
+
+        </span>
+
+
+        <h2>
+            🛒 Giỏ hàng
+        </h2>
+
+
+        <div id="cartItems"></div>
+
+
+        <div class="cart-total">
+
+            Tổng cộng:
+
+            <strong id="cartTotal">
+                0đ
+            </strong>
+
+        </div>
+
+
+        <button onclick="checkout()">
+
+            Thanh toán
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT CHUNG ================= -->
+
+<script src="js/script.js"></script>
+
+
+<!-- ================= JAVASCRIPT TRUYỆN ================= -->
+
+<script>
+
+let selectedManga = "";
+
+let selectedMangaPrice = 0;
+
+
+// ================= LỌC TRUYỆN =================
+
+function filterManga() {
+
+    const filter =
+        document.getElementById(
+            "mangaFilter"
+        ).value;
+
+
+    const products =
+        document.querySelectorAll(
+            ".manga-product"
+        );
+
+
+    products.forEach(product => {
+
+        const type =
+            product.dataset.type;
+
+
+        if (
+            filter === "all" ||
+            filter === type
+        ) {
+
+            product.style.display =
+                "block";
+
+        } else {
+
+            product.style.display =
+                "none";
+
+        }
+
+    });
+
+}
+
+
+// ================= HIỆN THÔNG TIN =================
+
+function showManga(
+    name,
+    icon,
+    author,
+    year,
+    genre,
+    price,
+    priceNumber
+) {
+
+    selectedManga = name;
+
+    selectedMangaPrice =
+        priceNumber;
+
+
+    document.getElementById(
+        "mangaName"
+    ).innerText = name;
+
+
+    document.getElementById(
+        "mangaIcon"
+    ).innerText = icon;
+
+
+    document.getElementById(
+        "mangaAuthor"
+    ).innerText = author;
+
+
+    document.getElementById(
+        "mangaYear"
+    ).innerText = year;
+
+
+    document.getElementById(
+        "mangaGenre"
+    ).innerText = genre;
+
+
+    document.getElementById(
+        "mangaPrice"
+    ).innerText = price;
+
+
+    document.getElementById(
+        "mangaQuantity"
+    ).value = 1;
+
+
+    document.getElementById(
+        "mangaModal"
+    ).classList.add("show");
+
+}
+
+
+// ================= THÊM TRUYỆN VÀO GIỎ =================
+
+function addMangaToCart() {
+
+    const quantity =
+        Number(
+            document.getElementById(
+                "mangaQuantity"
+            ).value
+        );
+
+
+    if (quantity < 1) {
+
+        alert(
+            "Vui lòng chọn số lượng hợp lệ!"
+        );
+
+        return;
+
+    }
+
+
+    for (
+        let i = 0;
+        i < quantity;
+        i++
+    ) {
+
+        addToCart(
+            selectedManga,
+            selectedMangaPrice
+        );
+
+    }
+
+
+    closeManga();
+
+}
+
+
+// ================= ĐÓNG =================
+
+function closeManga() {
+
+    document.getElementById(
+        "mangaModal"
+    ).classList.remove("show");
+
+}
+
+</script>
+
+
+
+
+<script>
+(function(){
+  function initPageSearch(){
+    const input=document.getElementById("pageSearch");
+    const clear=document.getElementById("clearPageSearch");
+    if(!input)return;
+    const items=[...document.querySelectorAll(".product-card,.feature-card,.info-box,.promotion,.product-item,.manga-product,.menu-item,.food-card,.drink-card,.card")];
+    function run(){
+      const q=input.value.toLowerCase().trim();
+      items.forEach(function(el){
+        const text=(el.innerText||el.textContent||"").toLowerCase();
+        el.style.display=(!q||text.includes(q))?"":"none";
+      });
+    }
+    input.addEventListener("input",run);
+    clear&&clear.addEventListener("click",function(){input.value="";run();input.focus()});
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initPageSearch);
+  else initPageSearch();
+})();
+</script>
+
+</body>
+
+</html>
+```

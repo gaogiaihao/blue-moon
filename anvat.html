@@ -1,0 +1,1025 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Đồ ăn vặt - Blue Moon Shop</title>
+
+    <!-- KẾT NỐI CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+
+        🍟 <span>BLUE MOON</span>
+
+        <small>
+            Milk Tea • Snack • Manga
+        </small>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Trang chủ
+        </a>
+
+
+        <a href="menu.html">
+            Menu
+        </a>
+
+
+        <a href="truyen.html">
+            Truyện tranh
+        </a>
+
+
+        <a href="trasua.html">
+            Trà sữa
+        </a>
+
+
+        <a href="anvat.html"
+            class="active">
+
+            Đồ ăn vặt
+
+        </a>
+
+
+        <a href="gopy.html">
+            Góp ý
+        </a>
+
+    </nav>
+
+
+    <div class="header-right">
+
+        <button onclick="openCart()">
+
+            🛒
+
+            <span id="cartCount">
+                0
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- BLUE MOON SEARCH -->
+<div class="page-search-box">
+  <input id="pageSearch" type="search" placeholder="🔎 Tìm kiếm..." autocomplete="off">
+  <button id="clearPageSearch" type="button">✕</button>
+</div>
+<style>
+.page-search-box{width:min(900px,90%);margin:24px auto;padding:12px;display:flex;gap:10px;box-sizing:border-box;background:#fff;border-radius:16px;box-shadow:0 5px 20px rgba(0,80,170,.08)}
+.page-search-box input{flex:1;min-width:0;padding:13px 16px;border:1px solid #d9e8f8;border-radius:12px;outline:0;font-size:16px}
+.page-search-box input:focus{border-color:#1677ff}
+.page-search-box button{width:44px;height:44px;border:0;border-radius:12px;background:#e8f3ff;color:#1677ff;cursor:pointer}
+.page-search-box button:hover{background:#1677ff;color:#fff}
+</style>
+
+
+
+
+<!-- ================= NỘI DUNG ================= -->
+
+<section class="section">
+
+
+    <div class="section-title">
+
+        <span>
+            🍟
+        </span>
+
+
+        <div>
+
+            <h2>
+                Đồ ăn vặt
+            </h2>
+
+
+            <p>
+                Bánh, kẹo, snack và những món
+                ăn vặt được yêu thích
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= BỘ LỌC ================= -->
+
+    <div style="
+        background:white;
+        padding:25px;
+        border-radius:20px;
+        margin-bottom:30px;
+        box-shadow:0 5px 20px rgba(0,80,170,.07);
+    ">
+
+
+        <h3 style="margin-bottom:15px;">
+
+            🔎 Lọc đồ ăn vặt
+
+        </h3>
+
+
+        <select
+            id="snackFilter"
+            onchange="filterSnack()"
+            style="
+                padding:12px;
+                border:1px solid #d9e8f8;
+                border-radius:10px;
+                width:280px;
+                max-width:100%;
+            ">
+
+
+            <option value="all">
+                Tất cả
+            </option>
+
+
+            <option value="snack">
+                🍿 Snack
+            </option>
+
+
+            <option value="cake">
+                🍰 Bánh
+            </option>
+
+
+            <option value="candy">
+                🍬 Kẹo
+            </option>
+
+
+            <option value="fried">
+                🍟 Đồ chiên
+            </option>
+
+
+        </select>
+
+    </div>
+
+
+
+    <!-- ================= SẢN PHẨM ================= -->
+
+    <div class="product-grid">
+
+
+
+        <!-- KHOAI TÂY -->
+
+        <div class="product-card snack-product"
+            data-type="fried"
+            data-name="Khoai tây lắc phô mai">
+
+
+            <div class="product-image yellow">
+
+                <img
+                    src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80"
+                    alt="Khoai tây lắc phô mai">
+
+            </div>
+
+
+            <span class="tag hot">
+
+                BÁN CHẠY
+
+            </span>
+
+
+            <h3>
+
+                Khoai tây lắc phô mai
+
+            </h3>
+
+
+            <p>
+
+                Khoai tây giòn thơm
+                phủ bột phô mai.
+
+            </p>
+
+
+            <p class="price">
+
+                29.000đ
+
+            </p>
+
+
+            <button onclick="
+                showSnack(
+                    'Khoai tây lắc phô mai',
+                    '🍟',
+                    'Khoai tây giòn thơm phủ bột phô mai.',
+                    'Đồ chiên',
+                    '29.000đ',
+                    29000
+                )
+            ">
+
+                👀 Xem món
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- OREO -->
+
+        <div class="product-card snack-product"
+            data-type="cake"
+            data-name="Bánh Oreo">
+
+
+            <div class="product-image blue">
+
+                <img
+                    src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80"
+                    alt="Bánh Oreo">
+
+            </div>
+
+
+            <span class="tag">
+
+                PHỔ BIẾN
+
+            </span>
+
+
+            <h3>
+
+                Bánh Oreo
+
+            </h3>
+
+
+            <p>
+
+                Bánh quy chocolate
+                nhân kem thơm béo.
+
+            </p>
+
+
+            <p class="price">
+
+                18.000đ
+
+            </p>
+
+
+            <button onclick="
+                showSnack(
+                    'Bánh Oreo',
+                    '🍪',
+                    'Bánh quy chocolate nhân kem thơm béo.',
+                    'Bánh',
+                    '18.000đ',
+                    18000
+                )
+            ">
+
+                👀 Xem món
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- SNACK KHOAI TÂY -->
+
+        <div class="product-card snack-product"
+            data-type="snack"
+            data-name="Snack khoai tây">
+
+
+            <div class="product-image pink">
+
+                <img
+                    src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=600&q=80"
+                    alt="Snack khoai tây">
+
+            </div>
+
+
+            <span class="tag hot">
+
+                HOT
+
+            </span>
+
+
+            <h3>
+
+                Snack khoai tây
+
+            </h3>
+
+
+            <p>
+
+                Snack khoai tây giòn
+                với nhiều hương vị.
+
+            </p>
+
+
+            <p class="price">
+
+                15.000đ
+
+            </p>
+
+
+            <button onclick="
+                showSnack(
+                    'Snack khoai tây',
+                    '🥔',
+                    'Snack khoai tây giòn với nhiều hương vị.',
+                    'Snack',
+                    '15.000đ',
+                    15000
+                )
+            ">
+
+                👀 Xem món
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- KẸO DẺO -->
+
+        <div class="product-card snack-product"
+            data-type="candy"
+            data-name="Kẹo dẻo trái cây">
+
+
+            <div class="product-image purple">
+
+                <img
+                    src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=600&q=80"
+                    alt="Kẹo dẻo trái cây">
+
+            </div>
+
+
+            <span class="tag">
+
+                YÊU THÍCH
+
+            </span>
+
+
+            <h3>
+
+                Kẹo dẻo trái cây
+
+            </h3>
+
+
+            <p>
+
+                Kẹo dẻo nhiều vị
+                trái cây thơm ngon.
+
+            </p>
+
+
+            <p class="price">
+
+                20.000đ
+
+            </p>
+
+
+            <button onclick="
+                showSnack(
+                    'Kẹo dẻo trái cây',
+                    '🍬',
+                    'Kẹo dẻo nhiều vị trái cây thơm ngon.',
+                    'Kẹo',
+                    '20.000đ',
+                    20000
+                )
+            ">
+
+                👀 Xem món
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- BÁNH QUE -->
+
+        <div class="product-card snack-product"
+            data-type="cake"
+            data-name="Bánh que chocolate">
+
+
+            <div class="product-image yellow">
+
+                <img
+                    src="https://images.unsplash.com/photo-1575377427642-087cf684f29d?auto=format&fit=crop&w=600&q=80"
+                    alt="Bánh que chocolate">
+
+            </div>
+
+
+            <span class="tag">
+
+                MỚI
+
+            </span>
+
+
+            <h3>
+
+                Bánh que chocolate
+
+            </h3>
+
+
+            <p>
+
+                Bánh que giòn phủ
+                chocolate thơm ngon.
+
+            </p>
+
+
+            <p class="price">
+
+                22.000đ
+
+            </p>
+
+
+            <button onclick="
+                showSnack(
+                    'Bánh que chocolate',
+                    '🍫',
+                    'Bánh que giòn phủ chocolate thơm ngon.',
+                    'Bánh',
+                    '22.000đ',
+                    22000
+                )
+            ">
+
+                👀 Xem món
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- CÁ VIÊN -->
+
+        <div class="product-card snack-product"
+            data-type="fried"
+            data-name="Cá viên chiên">
+
+
+            <div class="product-image blue">
+
+                <img
+                    src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=80"
+                    alt="Cá viên chiên">
+
+            </div>
+
+
+            <span class="tag">
+
+                YÊU THÍCH
+
+            </span>
+
+
+            <h3>
+
+                Cá viên chiên
+
+            </h3>
+
+
+            <p>
+
+                Cá viên chiên nóng,
+                ăn kèm tương ớt.
+
+            </p>
+
+
+            <p class="price">
+
+                25.000đ
+
+            </p>
+
+
+            <button onclick="
+                showSnack(
+                    'Cá viên chiên',
+                    '🍢',
+                    'Cá viên chiên nóng, ăn kèm tương ớt.',
+                    'Đồ chiên',
+                    '25.000đ',
+                    25000
+                )
+            ">
+
+                👀 Xem món
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+
+    <div>
+
+        <h2>
+            🍟 BLUE MOON SHOP
+        </h2>
+
+
+        <p>
+            Trà sữa • Đồ ăn vặt • Truyện tranh
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Liên hệ
+        </h3>
+
+
+        <p>
+            📞 000000000
+        </p>
+
+
+        <p>
+            🕐 Hoạt động 24/7
+        </p>
+
+
+        <p>
+            📍 Giao hàng tại Thành phố Hồ Chí Minh
+        </p>
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- ================= MODAL CHI TIẾT ================= -->
+
+<div id="snackModal"
+    class="modal">
+
+
+    <div class="modal-content">
+
+
+        <span
+            class="close"
+            onclick="closeSnack()">
+
+            ×
+
+        </span>
+
+
+        <div
+            id="snackIcon"
+            class="modal-icon">
+
+            🍟
+
+        </div>
+
+
+        <h2 id="snackName">
+
+            Đồ ăn vặt
+
+        </h2>
+
+
+        <p id="snackDescription">
+
+        </p>
+
+
+        <p style="
+            text-align:left;
+            line-height:2;
+        ">
+
+            🍴
+            <strong>
+                Loại:
+            </strong>
+
+            <span id="snackType"></span>
+
+        </p>
+
+
+        <h3
+            id="snackPrice"
+            class="price">
+
+        </h3>
+
+
+        <label>
+
+            <strong>
+                Số lượng:
+            </strong>
+
+        </label>
+
+
+        <input
+            id="snackQuantity"
+            type="number"
+            value="1"
+            min="1"
+            max="20"
+            style="
+                width:100%;
+                padding:12px;
+                margin:10px 0 20px;
+                border:1px solid #ddd;
+                border-radius:10px;
+            ">
+
+
+        <button onclick="addSnackToCart()">
+
+            🛒 Thêm vào giỏ hàng
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= GIỎ HÀNG ================= -->
+
+<div id="cartModal"
+    class="modal">
+
+
+    <div class="modal-content cart-content">
+
+
+        <span
+            class="close"
+            onclick="closeCart()">
+
+            ×
+
+        </span>
+
+
+        <h2>
+
+            🛒 Giỏ hàng
+
+        </h2>
+
+
+        <div id="cartItems"></div>
+
+
+        <div class="cart-total">
+
+            Tổng cộng:
+
+            <strong id="cartTotal">
+
+                0đ
+
+            </strong>
+
+        </div>
+
+
+        <button onclick="checkout()">
+
+            Thanh toán
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= JAVASCRIPT CHUNG ================= -->
+
+<script src="js/script.js"></script>
+
+
+
+<!-- ================= JAVASCRIPT ĐỒ ĂN ================= -->
+
+<script>
+
+
+// SẢN PHẨM ĐANG CHỌN
+
+let selectedSnack = "";
+
+let selectedSnackPrice = 0;
+
+
+
+// ================= LỌC ĐỒ ĂN =================
+
+function filterSnack() {
+
+    const filter =
+        document.getElementById(
+            "snackFilter"
+        ).value;
+
+
+    const products =
+        document.querySelectorAll(
+            ".snack-product"
+        );
+
+
+    products.forEach(product => {
+
+        const type =
+            product.dataset.type;
+
+
+        if (
+            filter === "all" ||
+            filter === type
+        ) {
+
+            product.style.display =
+                "block";
+
+        }
+
+        else {
+
+            product.style.display =
+                "none";
+
+        }
+
+    });
+
+}
+
+
+
+// ================= HIỆN THÔNG TIN =================
+
+function showSnack(
+    name,
+    icon,
+    description,
+    type,
+    price,
+    priceNumber
+) {
+
+
+    selectedSnack =
+        name;
+
+
+    selectedSnackPrice =
+        priceNumber;
+
+
+    document.getElementById(
+        "snackName"
+    ).innerText =
+        name;
+
+
+    document.getElementById(
+        "snackIcon"
+    ).innerText =
+        icon;
+
+
+    document.getElementById(
+        "snackDescription"
+    ).innerText =
+        description;
+
+
+    document.getElementById(
+        "snackType"
+    ).innerText =
+        type;
+
+
+    document.getElementById(
+        "snackPrice"
+    ).innerText =
+        price;
+
+
+    document.getElementById(
+        "snackQuantity"
+    ).value =
+        1;
+
+
+    document.getElementById(
+        "snackModal"
+    ).classList.add("show");
+
+}
+
+
+
+// ================= THÊM VÀO GIỎ =================
+
+function addSnackToCart() {
+
+
+    const quantity =
+        Number(
+            document.getElementById(
+                "snackQuantity"
+            ).value
+        );
+
+
+    if (quantity < 1) {
+
+        alert(
+            "Vui lòng chọn số lượng hợp lệ!"
+        );
+
+        return;
+
+    }
+
+
+    for (
+        let i = 0;
+        i < quantity;
+        i++
+    ) {
+
+        addToCart(
+            selectedSnack,
+            selectedSnackPrice
+        );
+
+    }
+
+
+    closeSnack();
+
+}
+
+
+
+// ================= ĐÓNG =================
+
+function closeSnack() {
+
+    document.getElementById(
+        "snackModal"
+    ).classList.remove("show");
+
+}
+
+</script>
+
+
+
+
+<script>
+(function(){
+  function initPageSearch(){
+    const input=document.getElementById("pageSearch");
+    const clear=document.getElementById("clearPageSearch");
+    if(!input)return;
+    const items=[...document.querySelectorAll(".product-card,.feature-card,.info-box,.promotion,.product-item,.manga-product,.menu-item,.food-card,.drink-card,.card")];
+    function run(){
+      const q=input.value.toLowerCase().trim();
+      items.forEach(function(el){
+        const text=(el.innerText||el.textContent||"").toLowerCase();
+        el.style.display=(!q||text.includes(q))?"":"none";
+      });
+    }
+    input.addEventListener("input",run);
+    clear&&clear.addEventListener("click",function(){input.value="";run();input.focus()});
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initPageSearch);
+  else initPageSearch();
+})();
+</script>
+
+</body>
+
+</html>
+```
+
+**Chỉ có 6 chỗ được thay:** `🍟`, `🍪`, `🥔`, `🍬`, `🍫`, `🍢` trong phần `.product-image` thành `<img>`. Những emoji trong `showSnack()` mình **cố tình giữ nguyên**, vì nếu đổi chúng thì sẽ ảnh hưởng đến nội dung modal mà bạn yêu cầu không thay đổi.
+
+Nếu ảnh vẫn hơi lớn do CSS hiện tại của bạn, thêm đoạn này **cuối `css/style.css`**:
+
+```css id="27604"
+.product-image img {
+    width: 80%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    margin: auto;
+}
+```

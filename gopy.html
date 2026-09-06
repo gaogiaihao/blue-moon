@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Góp ý & Khiếu nại | Mochi Tea & Comic</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="container nav">
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-icon">
+                💙
+            </span>
+
+            <span>
+                Mochi Tea
+                <small>& Comic</small>
+            </span>
+
+        </a>
+
+
+        <button
+            class="menu-toggle"
+            onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+
+        <nav id="mainNav">
+
+            <a href="index.html">
+                Trang chủ
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="trasua.html">
+                Trà sữa
+            </a>
+
+            <a href="anvat.html">
+                Đồ ăn vặt
+            </a>
+
+            <a href="truyen.html">
+                Truyện tranh
+            </a>
+
+            <a class="active" href="gopy.html">
+                Góp ý
+            </a>
+
+        </nav>
+
+
+        <button
+            class="cart-button"
+            onclick="openCart()">
+
+            🛒
+            <span>Giỏ hàng</span>
+
+            <b id="cartCount">
+                0
+            </b>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<section class="page-banner">
+
+    <div class="container">
+
+        <span>
+            💌 WE LISTEN TO YOU
+        </span>
+
+        <h1>
+            Góp ý & Khiếu nại
+        </h1>
+
+        <p>
+            Ý kiến của bạn giúp Mochi ngày càng tốt hơn.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section feedback-section">
+
+    <div class="container feedback-grid">
+
+
+        <div class="feedback-info">
+
+            <span class="section-label">
+                💙 LIÊN HỆ
+            </span>
+
+            <h2>
+                Chúng mình luôn lắng nghe bạn.
+            </h2>
+
+            <p>
+                Nếu sản phẩm có vấn đề,
+                giao hàng chưa tốt hoặc bạn có ý tưởng
+                muốn đóng góp, hãy gửi phản hồi cho Mochi.
+            </p>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <div>
+                    <strong>
+                        Hotline
+                    </strong>
+
+                    <span>
+                        000000000
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    🕐
+                </div>
+
+                <div>
+                    <strong>
+                        Thời gian hoạt động
+                    </strong>
+
+                    <span>
+                        24/7
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    🚚
+                </div>
+
+                <div>
+                    <strong>
+                        Khu vực giao hàng
+                    </strong>
+
+                    <span>
+                        Thành phố Hồ Chí Minh
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="feedback-form">
+
+            <h2>
+                📝 Gửi phản hồi
+            </h2>
+
+            <p>
+                Các trường có dấu * là bắt buộc.
+            </p>
+
+
+            <form onsubmit="submitFeedback(event)">
+
+                <label>
+                    Họ và tên *
+                </label>
+
+                <input
+                    id="feedbackName"
+                    type="text"
+                    required
+                    placeholder="Nhập họ tên"
+                >
+
+
+                <label>
+                    Email *
+                </label>
+
+                <input
+                    id="feedbackEmail"
+                    type="email"
+                    required
+                    placeholder="example@email.com"
+                >
+
+
+                <label>
+                    Số điện thoại
+                </label>
+
+                <input
+                    id="feedbackPhone"
+                    type="tel"
+                    placeholder="000000000"
+                >
+
+
+                <label>
+                    Mã đơn hàng
+                </label>
+
+                <input
+                    id="orderCode"
+                    type="text"
+                    placeholder="VD: MTC001"
+                >
+
+
+                <label>
+                    Loại phản hồi *
+                </label>
+
+                <select
+                    id="feedbackType"
+                    required>
+
+                    <option value="">
+                        -- Chọn loại phản hồi --
+                    </option>
+
+                    <option>
+                        Góp ý
+                    </option>
+
+                    <option>
+                        Khiếu nại sản phẩm
+                    </option>
+
+                    <option>
+                        Khiếu nại giao hàng
+                    </option>
+
+                    <option>
+                        Khác
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Mức độ hài lòng
+                </label>
+
+                <div class="rating">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="5">
+                        ⭐⭐⭐⭐⭐
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="4">
+                        ⭐⭐⭐⭐
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="3">
+                        ⭐⭐⭐
+                    </label>
+
+                </div>
+
+
+                <label>
+                    Nội dung *
+                </label>
+
+                <textarea
+                    id="feedbackMessage"
+                    required
+                    placeholder="Hãy viết phản hồi của bạn...">
+                </textarea>
+
+
+                <button
+                    class="btn btn-primary full">
+
+                    💌 Gửi phản hồi
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+                💙 Mochi Tea & Comic
+            </div>
+
+            <p>
+                Trà sữa • Đồ ăn vặt • Truyện tranh
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>
+                Hotline
+            </h4>
+
+            <p>
+                📞 000000000
+            </p>
+
+            <p>
+                🕐 24/7
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>
+                Giao hàng
+            </h4>
+
+            <p>
+                🚚 TP. Hồ Chí Minh
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Mochi Tea & Comic
+    </div>
+
+</footer>
+
+
+<div id="cartOverlay"
+     class="cart-overlay"
+     onclick="closeCart()">
+</div>
+
+
+<aside
+    id="cartDrawer"
+    class="cart-drawer">
+
+    <div class="cart-header">
+
+        <h2>
+            🛒 Giỏ hàng
+        </h2>
+
+        <button onclick="closeCart()">
+            ×
+        </button>
+
+    </div>
+
+    <div
+        id="cartItems"
+        class="cart-items">
+    </div>
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+
+            <span>
+                Tổng cộng
+            </span>
+
+            <strong id="cartTotal">
+                0đ
+            </strong>
+
+        </div>
+
+        <button
+            class="btn btn-primary full"
+            onclick="openCheckout()">
+
+            💳 Thanh toán
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<div id="checkoutModal" class="modal">
+
+    <div class="modal-content checkout">
+
+        <button
+            class="modal-close"
+            onclick="closeCheckout()">
+
+            ×
+
+        </button>
+
+        <h2>
+            💳 Thanh toán
+        </h2>
+
+        <form onsubmit="submitOrder(event)">
+
+            <label>
+                Họ và tên
+            </label>
+
+            <input
+                id="customerName"
+                required
+                type="text"
+            >
+
+            <label>
+                Số điện thoại
+            </label>
+
+            <input
+                id="customerPhone"
+                required
+                type="tel"
+            >
+
+            <label>
+                Địa chỉ
+            </label>
+
+            <textarea
+                id="customerAddress"
+                required>
+            </textarea>
+
+            <label>
+                Thanh toán
+            </label>
+
+            <select id="paymentMethod">
+
+                <option>
+                    Thanh toán khi nhận hàng
+                </option>
+
+                <option>
+                    Chuyển khoản ngân hàng
+                </option>
+
+                <option>
+                    Ví điện tử
+                </option>
+
+            </select>
+
+            <button class="btn btn-primary full">
+
+                ✅ Đặt hàng
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

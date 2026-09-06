@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Moon Shop - Trang chủ</title>
+
+    <!-- LIÊN KẾT CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        🧋 <span>BLUE MOON</span>
+        <small>Milk Tea • Snack • Manga</small>
+    </div>
+
+    <nav>
+        <a href="index.html" class="active">Trang chủ</a>
+        <a href="menu.html">Menu</a>
+        <a href="truyen.html">Truyện tranh</a>
+        <a href="trasua.html">Trà sữa</a>
+        <a href="anvat.html">Đồ ăn vặt</a>
+        <a href="gopy.html">Góp ý</a>
+    </nav>
+
+    <div class="header-right">
+        <button onclick="focusSearch()">🔍</button>
+        <button onclick="openCart()">🛒 <span id="cartCount">0</span></button>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="hero-small">WELCOME TO BLUE MOON SHOP</p>
+        <h1>Trà sữa, đồ ăn vặt<br>và truyện tranh</h1>
+
+        <p>
+            Mua mọi thứ bạn yêu thích ngay tại nhà.
+            Giao hàng trong phạm vi Thành phố Hồ Chí Minh.
+        </p>
+
+        <a href="menu.html" class="btn">Xem Menu ngay →</a>
+    </div>
+</section>
+
+<section class="search-box" id="searchArea">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Tìm trà sữa, đồ ăn vặt, truyện tranh..."
+        onkeyup="searchProducts()"
+    >
+</section>
+
+<section class="section">
+    <div class="section-title">
+        <span>🔥</span>
+        <div>
+            <h2>Sản phẩm bán chạy</h2>
+            <p>Những sản phẩm được khách hàng yêu thích nhất</p>
+        </div>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card"
+             data-name="Trà sữa trân châu đường đen"
+             onclick="showProduct(
+             'Trà sữa trân châu đường đen',
+             '🧋',
+             'Trà sữa thơm béo kết hợp trân châu đường đen.',
+             '39.000đ')">
+
+            <div class="product-image blue">🧋</div>
+            <span class="tag hot">BÁN CHẠY</span>
+            <h3>Trà sữa trân châu đường đen</h3>
+            <p class="price">39.000đ</p>
+            <button onclick="event.stopPropagation(); addToCart('Trà sữa trân châu đường đen',39000)">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+        <div class="product-card"
+             data-name="Khoai tây lắc phô mai"
+             onclick="showProduct(
+             'Khoai tây lắc phô mai',
+             '🍟',
+             'Khoai tây giòn thơm phủ bột phô mai.',
+             '29.000đ')">
+
+            <div class="product-image yellow">🍟</div>
+            <span class="tag hot">HOT</span>
+            <h3>Khoai tây lắc phô mai</h3>
+            <p class="price">29.000đ</p>
+            <button onclick="event.stopPropagation(); addToCart('Khoai tây lắc phô mai',29000)">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+        <div class="product-card"
+             data-name="One Piece tập mới"
+             onclick="showProduct(
+             'One Piece',
+             '📚',
+             'Truyện tranh phiêu lưu nổi tiếng của tác giả Eiichiro Oda.',
+             '25.000đ')">
+
+            <div class="product-image pink">📚</div>
+            <span class="tag">MANGA</span>
+            <h3>One Piece</h3>
+            <p class="price">25.000đ</p>
+            <button onclick="event.stopPropagation(); addToCart('One Piece',25000)">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+        <div class="product-card"
+             data-name="Kẹo dẻo trái cây"
+             onclick="showProduct(
+             'Kẹo dẻo trái cây',
+             '🍬',
+             'Kẹo dẻo nhiều vị trái cây thơm ngon.',
+             '20.000đ')">
+
+            <div class="product-image purple">🍬</div>
+            <span class="tag">YÊU THÍCH</span>
+            <h3>Kẹo dẻo trái cây</h3>
+            <p class="price">20.000đ</p>
+            <button onclick="event.stopPropagation(); addToCart('Kẹo dẻo trái cây',20000)">
+                Thêm vào giỏ
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section class="promotion">
+    <div>
+        <span>🎁 KHUYẾN MÃI</span>
+        <h2>Mua 2 ly trà sữa<br>giảm ngay 20%</h2>
+        <p>Áp dụng mỗi ngày cho đơn hàng từ 2 ly.</p>
+    </div>
+
+    <div class="sale-circle">
+        -20%
+    </div>
+</section>
+
+<section class="info-section">
+    <div class="info-box">
+        <div>🚚</div>
+        <h3>Giao hàng tận nơi</h3>
+        <p>Giao hàng trong phạm vi Thành phố Hồ Chí Minh.</p>
+    </div>
+
+    <div class="info-box">
+        <div>💳</div>
+        <h3>Thanh toán tiện lợi</h3>
+        <p>Thanh toán khi nhận hàng hoặc chuyển khoản.</p>
+    </div>
+
+    <div class="info-box">
+        <div>🕐</div>
+        <h3>Hoạt động 24/7</h3>
+        <p>Đặt hàng bất cứ lúc nào bạn muốn.</p>
+    </div>
+</section>
+
+<footer>
+    <div>
+        <h2>🧋 BLUE MOON SHOP</h2>
+        <p>Trà sữa • Đồ ăn vặt • Truyện tranh</p>
+    </div>
+
+    <div>
+        <h3>Liên hệ</h3>
+        <p>📞 000000000</p>
+        <p>🕐 Hoạt động: 24/7</p>
+        <p>📍 Khu vực giao hàng: Thành phố Hồ Chí Minh</p>
+    </div>
+</footer>
+
+<!-- POPUP SẢN PHẨM -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <div id="modalIcon" class="modal-icon">🧋</div>
+        <h2 id="modalName"></h2>
+        <p id="modalDescription"></p>
+        <h3 id="modalPrice" class="price"></h3>
+        <button id="modalAddButton">🛒 Thêm vào giỏ hàng</button>
+    </div>
+</div>
+
+<!-- GIỎ HÀNG -->
+<div id="cartModal" class="modal">
+    <div class="modal-content cart-content">
+        <span class="close" onclick="closeCart()">×</span>
+        <h2>🛒 Giỏ hàng</h2>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-total">
+            Tổng cộng: <strong id="cartTotal">0đ</strong>
+        </div>
+
+        <button onclick="checkout()">Thanh toán</button>
+    </div>
+</div>
+
+<!-- LIÊN KẾT JS -->
+<script src="js/script.js"></script>
+
+
+<section id="dat-hang" class="contact-order">
+<style>
+.contact-order{width:min(900px,90%);margin:40px auto;padding:28px;background:#fff;border-radius:22px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.contact-order form{display:grid;gap:10px}.contact-order input,.contact-order textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d9e8f8;border-radius:12px;font:inherit}.contact-order input:focus,.contact-order textarea:focus{outline:0;border-color:#1677ff}.contact-order textarea{min-height:100px;resize:vertical}.contact-error{color:#d93025;font-size:14px;min-height:16px}.contact-order button{border:0;border-radius:12px;padding:13px;background:#1677ff;color:#fff;font-weight:700;cursor:pointer}
+</style>
+<h2>📞 Liên hệ & Đặt hàng</h2>
+<form id="orderForm" novalidate>
+<label for="orderName">Họ và tên</label><input id="orderName" required minlength="2" placeholder="Nhập họ và tên"><div id="nameError" class="contact-error"></div>
+<label for="orderPhone">Số điện thoại</label><input id="orderPhone" required pattern="[0-9]{9,11}" placeholder="Nhập số điện thoại"><div id="phoneError" class="contact-error"></div>
+<label for="orderEmail">Email</label><input id="orderEmail" type="email" required placeholder="Nhập email"><div id="emailError" class="contact-error"></div>
+<label for="orderMessage">Nội dung / sản phẩm muốn đặt</label><textarea id="orderMessage" required minlength="5" placeholder="Nhập sản phẩm muốn đặt"></textarea><div id="messageError" class="contact-error"></div>
+<button type="submit">📦 Gửi yêu cầu đặt hàng</button><p id="orderSuccess"></p>
+</form>
+<script>
+document.getElementById("orderForm").addEventListener("submit",function(e){
+e.preventDefault();const a=document.getElementById("orderName"),b=document.getElementById("orderPhone"),c=document.getElementById("orderEmail"),d=document.getElementById("orderMessage");
+document.getElementById("nameError").textContent=a.validity.valid?"":"Vui lòng nhập họ tên (ít nhất 2 ký tự).";
+document.getElementById("phoneError").textContent=b.validity.valid?"":"Số điện thoại phải có 9–11 chữ số.";
+document.getElementById("emailError").textContent=c.validity.valid?"":"Vui lòng nhập email hợp lệ.";
+document.getElementById("messageError").textContent=d.validity.valid?"":"Vui lòng nhập nội dung (ít nhất 5 ký tự).";
+if([a,b,c,d].every(x=>x.validity.valid)){document.getElementById("orderSuccess").textContent="✅ Đã nhận thông tin đặt hàng!";this.reset();}else document.getElementById("orderSuccess").textContent="";
+});
+</script>
+</section>
+</body>
+</html>

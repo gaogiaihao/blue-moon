@@ -1,0 +1,645 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Giới thiệu - Blue Moon Shop</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+
+        🧋 <span>BLUE MOON</span>
+
+        <small>
+            Milk Tea • Snack • Manga
+        </small>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Trang chủ
+        </a>
+
+        <a href="menu.html">
+            Menu
+        </a>
+
+        <a href="truyen.html">
+            Truyện tranh
+        </a>
+
+        <a href="trasua.html">
+            Trà sữa
+        </a>
+
+        <a href="anvat.html">
+            Đồ ăn vặt
+        </a>
+
+        <a href="gopy.html">
+            Góp ý
+        </a>
+
+    </nav>
+
+
+    <div class="header-right">
+
+        <button onclick="openCart()">
+            🛒 <span id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================
+     THANH TÌM KIẾM
+     ========================================== -->
+
+<div class="page-search">
+
+    <input
+        type="text"
+        id="pageSearch"
+        placeholder="🔎 Tìm kiếm..."
+        oninput="searchAboutPage()"
+    >
+
+    <button
+        type="button"
+        onclick="clearAboutSearch()"
+    >
+        ✕
+    </button>
+
+</div>
+
+
+<style>
+
+.page-search {
+
+    width: 90%;
+    max-width: 900px;
+
+    margin: 25px auto;
+
+    display: flex;
+
+    gap: 10px;
+
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 80, 170, .08);
+
+    box-sizing: border-box;
+
+}
+
+
+.page-search input {
+
+    flex: 1;
+
+    padding: 14px 18px;
+
+    border: 1px solid #d9e8f8;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+
+}
+
+
+.page-search input:focus {
+
+    border-color: #1677ff;
+
+}
+
+
+.page-search button {
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #e8f3ff;
+
+    color: #1677ff;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+
+.page-search button:hover {
+
+    background: #1677ff;
+
+    color: white;
+
+}
+
+</style>
+
+
+
+<main>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>
+            💙
+        </span>
+
+        <div>
+
+            <h2>
+                Giới thiệu Blue Moon Shop
+            </h2>
+
+            <p>
+                Một góc nhỏ dành cho những người yêu đồ ăn và truyện
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🧋
+            </div>
+
+            <h3>
+                Trà thơm ngon
+            </h3>
+
+            <p>
+                Nhiều loại trà và trà sữa,
+                có thể tùy chỉnh theo khẩu vị.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🍪
+            </div>
+
+            <h3>
+                Đồ ăn vặt
+            </h3>
+
+            <p>
+                Bánh, kẹo, snack và nhiều món ăn
+                phù hợp để nhâm nhi khi đọc truyện.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📚
+            </div>
+
+            <h3>
+                Truyện tranh
+            </h3>
+
+            <p>
+                Nhiều thể loại từ hài hước,
+                phiêu lưu đến hành động và kinh dị.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🚚
+            </div>
+
+            <h3>
+                Giao tận nơi
+            </h3>
+
+            <p>
+                Nhận đơn 24/7 trong phạm vi
+                thành phố Hồ Chí Minh.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<section class="promotion">
+
+    <div>
+
+        <span>
+            🎁 KHUYẾN MÃI
+        </span>
+
+        <h2>
+            Mua 2 ly trà sữa
+            <br>
+            giảm ngay 20%
+        </h2>
+
+        <p>
+            Áp dụng mỗi ngày cho đơn hàng từ 2 ly.
+        </p>
+
+    </div>
+
+
+    <div class="sale-circle">
+        -20%
+    </div>
+
+</section>
+
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>
+            💙
+        </span>
+
+        <div>
+
+            <h2>
+                Về Blue Moon Shop
+            </h2>
+
+            <p>
+                Trà sữa • Đồ ăn vặt • Truyện tranh
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="info-section">
+
+
+        <div class="info-box">
+
+            <div>
+                🧋
+            </div>
+
+            <h3>
+                Trà sữa
+            </h3>
+
+            <p>
+                Những món trà sữa thơm ngon
+                dành cho khách hàng.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div>
+                🍟
+            </div>
+
+            <h3>
+                Đồ ăn vặt
+            </h3>
+
+            <p>
+                Nhiều món ăn vặt để thưởng thức
+                cùng đồ uống và truyện tranh.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div>
+                📚
+            </div>
+
+            <h3>
+                Truyện tranh
+            </h3>
+
+            <p>
+                Các thể loại truyện tranh
+                dành cho những người yêu manga.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+    <div>
+
+        <h2>
+            🧋 BLUE MOON SHOP
+        </h2>
+
+        <p>
+            Trà sữa • Đồ ăn vặt • Truyện tranh
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Liên hệ
+        </h3>
+
+        <p>
+            📞 000000000
+        </p>
+
+        <p>
+            🕐 Hoạt động 24/7
+        </p>
+
+        <p>
+            📍 Thành phố Hồ Chí Minh
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<div id="productModal" class="modal">
+
+    <div class="modal-content">
+
+        <span
+            class="close"
+            onclick="closeModal()">
+
+            ×
+
+        </span>
+
+        <div
+            id="modalIcon"
+            class="modal-icon">
+
+            🧋
+
+        </div>
+
+        <h2 id="modalName"></h2>
+
+        <p id="modalDescription"></p>
+
+        <h3
+            id="modalPrice"
+            class="price">
+        </h3>
+
+        <button id="modalAddButton">
+            🛒 Thêm vào giỏ hàng
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<div id="cartModal" class="modal">
+
+    <div class="modal-content cart-content">
+
+        <span
+            class="close"
+            onclick="closeCart()">
+
+            ×
+
+        </span>
+
+        <h2>
+            🛒 Giỏ hàng
+        </h2>
+
+
+        <div id="cartItems"></div>
+
+
+        <div class="cart-total">
+
+            Tổng cộng:
+
+            <strong id="cartTotal">
+                0đ
+            </strong>
+
+        </div>
+
+
+        <button onclick="checkout()">
+            Thanh toán
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<script src="js/script.js"></script>
+
+
+<script>
+
+/* ==========================================
+   TÌM KIẾM TRÊN TRANG ABOUT
+   ========================================== */
+
+function searchAboutPage() {
+
+    const input =
+        document.getElementById("pageSearch");
+
+    if (!input) return;
+
+
+    const keyword =
+        input.value
+            .toLowerCase()
+            .trim();
+
+
+    /*
+     * Tìm trong từng phần nội dung
+     * của trang.
+     */
+
+    const items =
+        document.querySelectorAll(
+            "main .section, main .promotion"
+        );
+
+
+    items.forEach(
+        function(item) {
+
+            const text =
+                item.innerText
+                    .toLowerCase();
+
+
+            if (
+                keyword === "" ||
+                text.includes(keyword)
+            ) {
+
+                item.style.display = "";
+
+            } else {
+
+                item.style.display = "none";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ==========================================
+   XÓA TÌM KIẾM
+   ========================================== */
+
+function clearAboutSearch() {
+
+    const input =
+        document.getElementById(
+            "pageSearch"
+        );
+
+
+    if (!input) return;
+
+
+    input.value = "";
+
+
+    searchAboutPage();
+
+
+    input.focus();
+
+}
+
+</script>
+
+
+
+
+<script>
+(function(){
+  function initPageSearch(){
+    const input=document.getElementById("pageSearch");
+    const clear=document.getElementById("clearPageSearch");
+    if(!input)return;
+    const items=[...document.querySelectorAll(".product-card,.feature-card,.info-box,.promotion,.product-item,.manga-product,.menu-item,.food-card,.drink-card,.card")];
+    function run(){
+      const q=input.value.toLowerCase().trim();
+      items.forEach(function(el){
+        const text=(el.innerText||el.textContent||"").toLowerCase();
+        el.style.display=(!q||text.includes(q))?"":"none";
+      });
+    }
+    input.addEventListener("input",run);
+    clear&&clear.addEventListener("click",function(){input.value="";run();input.focus()});
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initPageSearch);
+  else initPageSearch();
+})();
+</script>
+
+</body>
+
+</html>
+```
