@@ -613,31 +613,7 @@ function clearAboutSearch() {
 }
 
 </script>
-
-
-
-
-<script>
-(function(){
-  function initPageSearch(){
-    const input=document.getElementById("pageSearch");
-    const clear=document.getElementById("clearPageSearch");
-    if(!input)return;
-    const items=[...document.querySelectorAll(".product-card,.feature-card,.info-box,.promotion,.product-item,.manga-product,.menu-item,.food-card,.drink-card,.card")];
-    function run(){
-      const q=input.value.toLowerCase().trim();
-      items.forEach(function(el){
-        const text=(el.innerText||el.textContent||"").toLowerCase();
-        el.style.display=(!q||text.includes(q))?"":"none";
-      });
-    }
-    input.addEventListener("input",run);
-    clear&&clear.addEventListener("click",function(){input.value="";run();input.focus()});
-  }
-  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initPageSearch);
-  else initPageSearch();
-})();
-</script>
+<script></script>
 
 </body>
 

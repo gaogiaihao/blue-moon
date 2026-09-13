@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -10,7 +11,6 @@
 </head>
 
 <body>
-
 <header>
     <div class="logo">
         🧋 <span>BLUE MOON</span>
@@ -70,65 +70,93 @@
              data-name="Trà sữa trân châu đường đen"
              onclick="showProduct(
              'Trà sữa trân châu đường đen',
-             '🧋',
+             '<img src=&quot;https://images.unsplash.com/photo-1558857563-b371033873b8?auto=format&amp;fit=crop&amp;w=600&amp;q=80&quot; alt=&quot;Trà sữa trân châu đường đen&quot;>',
              'Trà sữa thơm béo kết hợp trân châu đường đen.',
              '39.000đ')">
 
-            <div class="product-image blue">🧋</div>
+            <div class="product-image blue">
+                <img
+                    src="https://images.unsplash.com/photo-1558857563-b371033873b8?auto=format&fit=crop&w=600&q=80"
+                    alt="Trà sữa trân châu đường đen">
+            </div>
+
             <span class="tag hot">BÁN CHẠY</span>
             <h3>Trà sữa trân châu đường đen</h3>
             <p class="price">39.000đ</p>
+
             <button onclick="event.stopPropagation(); addToCart('Trà sữa trân châu đường đen',39000)">
                 Thêm vào giỏ
             </button>
         </div>
 
+
         <div class="product-card"
              data-name="Khoai tây lắc phô mai"
              onclick="showProduct(
              'Khoai tây lắc phô mai',
-             '🍟',
+             '<img src=&quot;https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&amp;fit=crop&amp;w=600&amp;q=80&quot; alt=&quot;Khoai tây lắc phô mai&quot;>',
              'Khoai tây giòn thơm phủ bột phô mai.',
              '29.000đ')">
 
-            <div class="product-image yellow">🍟</div>
+            <div class="product-image yellow">
+                <img
+                    src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80"
+                    alt="Khoai tây lắc phô mai">
+            </div>
+
             <span class="tag hot">HOT</span>
             <h3>Khoai tây lắc phô mai</h3>
             <p class="price">29.000đ</p>
+
             <button onclick="event.stopPropagation(); addToCart('Khoai tây lắc phô mai',29000)">
                 Thêm vào giỏ
             </button>
         </div>
 
+
         <div class="product-card"
              data-name="One Piece tập mới"
              onclick="showProduct(
              'One Piece',
-             '📚',
+             '<img src=&quot;https://covers.openlibrary.org/b/isbn/9781974741298-L.jpg&quot; alt=&quot;One Piece&quot; style=&quot;width:110px;height:150px;object-fit:cover;border-radius:12px;&quot;>',
              'Truyện tranh phiêu lưu nổi tiếng của tác giả Eiichiro Oda.',
              '25.000đ')">
 
-            <div class="product-image pink">📚</div>
+            <div class="product-image pink">
+                <img
+                    src="https://covers.openlibrary.org/b/isbn/9781974741298-L.jpg"
+                    alt="One Piece"
+                    style="width:110px;height:150px;object-fit:cover;border-radius:12px;display:block;margin:auto;">
+            </div>
+
             <span class="tag">MANGA</span>
             <h3>One Piece</h3>
             <p class="price">25.000đ</p>
+
             <button onclick="event.stopPropagation(); addToCart('One Piece',25000)">
                 Thêm vào giỏ
             </button>
         </div>
 
+
         <div class="product-card"
              data-name="Kẹo dẻo trái cây"
              onclick="showProduct(
              'Kẹo dẻo trái cây',
-             '🍬',
+             '<img src=&quot;https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&amp;fit=crop&amp;w=600&amp;q=80&quot; alt=&quot;Kẹo dẻo trái cây&quot;>',
              'Kẹo dẻo nhiều vị trái cây thơm ngon.',
              '20.000đ')">
 
-            <div class="product-image purple">🍬</div>
+            <div class="product-image purple">
+                <img
+                    src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=600&q=80"
+                    alt="Kẹo dẻo trái cây">
+            </div>
+
             <span class="tag">YÊU THÍCH</span>
             <h3>Kẹo dẻo trái cây</h3>
             <p class="price">20.000đ</p>
+
             <button onclick="event.stopPropagation(); addToCart('Kẹo dẻo trái cây',20000)">
                 Thêm vào giỏ
             </button>
@@ -214,30 +242,6 @@
 <!-- LIÊN KẾT JS -->
 <script src="js/script.js"></script>
 
-
-<section id="dat-hang" class="contact-order">
-<style>
-.contact-order{width:min(900px,90%);margin:40px auto;padding:28px;background:#fff;border-radius:22px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
-.contact-order form{display:grid;gap:10px}.contact-order input,.contact-order textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d9e8f8;border-radius:12px;font:inherit}.contact-order input:focus,.contact-order textarea:focus{outline:0;border-color:#1677ff}.contact-order textarea{min-height:100px;resize:vertical}.contact-error{color:#d93025;font-size:14px;min-height:16px}.contact-order button{border:0;border-radius:12px;padding:13px;background:#1677ff;color:#fff;font-weight:700;cursor:pointer}
-</style>
-<h2>📞 Liên hệ & Đặt hàng</h2>
-<form id="orderForm" novalidate>
-<label for="orderName">Họ và tên</label><input id="orderName" required minlength="2" placeholder="Nhập họ và tên"><div id="nameError" class="contact-error"></div>
-<label for="orderPhone">Số điện thoại</label><input id="orderPhone" required pattern="[0-9]{9,11}" placeholder="Nhập số điện thoại"><div id="phoneError" class="contact-error"></div>
-<label for="orderEmail">Email</label><input id="orderEmail" type="email" required placeholder="Nhập email"><div id="emailError" class="contact-error"></div>
-<label for="orderMessage">Nội dung / sản phẩm muốn đặt</label><textarea id="orderMessage" required minlength="5" placeholder="Nhập sản phẩm muốn đặt"></textarea><div id="messageError" class="contact-error"></div>
-<button type="submit">📦 Gửi yêu cầu đặt hàng</button><p id="orderSuccess"></p>
-</form>
-<script>
-document.getElementById("orderForm").addEventListener("submit",function(e){
-e.preventDefault();const a=document.getElementById("orderName"),b=document.getElementById("orderPhone"),c=document.getElementById("orderEmail"),d=document.getElementById("orderMessage");
-document.getElementById("nameError").textContent=a.validity.valid?"":"Vui lòng nhập họ tên (ít nhất 2 ký tự).";
-document.getElementById("phoneError").textContent=b.validity.valid?"":"Số điện thoại phải có 9–11 chữ số.";
-document.getElementById("emailError").textContent=c.validity.valid?"":"Vui lòng nhập email hợp lệ.";
-document.getElementById("messageError").textContent=d.validity.valid?"":"Vui lòng nhập nội dung (ít nhất 5 ký tự).";
-if([a,b,c,d].every(x=>x.validity.valid)){document.getElementById("orderSuccess").textContent="✅ Đã nhận thông tin đặt hàng!";this.reset();}else document.getElementById("orderSuccess").textContent="";
-});
-</script>
-</section>
 </body>
 </html>
+
